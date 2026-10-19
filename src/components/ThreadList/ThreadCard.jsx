@@ -23,15 +23,16 @@ export default function ThreadCard({ thread, goBack, onSelect }) {
   return (
     <Card className="single-thread-card" onClick={handleSelect}>
       <Card.Body>
-        <Button
-          onClick={goBack}
-          variant="link"
-          size="sm"
-          className="back-to-home-btn text-decoration-none"
-        >
-          <i className="bi bi-arrow-left me-2"></i>Back to Home
-        </Button>
-
+        {goBack &&
+          <Button
+            onClick={goBack}
+            variant="link"
+            size="sm"
+            className="back-to-home-btn text-decoration-none"
+          >
+            <i className="bi bi-arrow-left me-2"></i>Back to Home
+          </Button>
+        }
         <Row className="g-3">
           {/* Voting UI */}
           <Col xs="auto">
